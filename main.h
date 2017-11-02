@@ -4,6 +4,7 @@
 #include "mbed.h"
 #include "rtos.h"
 
+extern "C" void mbed_reset();
 
 extern "C" {
 #include "CANopen.h"

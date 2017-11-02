@@ -1,8 +1,6 @@
 #include "main.h"
 
-#include "leds.h"
 #include "watchdog.h"
-#include "debug.h"
 
 extern "C" {
 #include "CO_driver.h"
@@ -11,14 +9,19 @@ extern "C" {
 
 
 /* Global variables and objects */
+DigitalOut HBled(LED1);
+DigitalOut CANrunLed(LED2);
+DigitalOut CANerrLed(LED3);
+DigitalOut ERRled(LED3);
+
+Serial USBport(p28, p27);
 
 Watchdog wdog;
 
-volatile uint16_t   CO_timer1ms = 0U;   /* variable increments each millisecond */
-
 Timer t;
 
-extern "C" void mbed_reset();
+volatile uint16_t   CO_timer1ms = 0U;   /* variable increments each millisecond */
+
 
 
 int main (void){
