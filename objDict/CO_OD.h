@@ -70,8 +70,7 @@
    typedef float64_t    REAL64; 
    typedef char_t       VISIBLE_STRING;
    typedef oChar_t      OCTET_STRING;
-   //typedef domain_t     DOMAIN;
-
+#define DOMAIN domain_t
 
 /*******************************************************************************
    FILE INFO:
@@ -175,7 +174,7 @@
                UNSIGNED64     U64;
                REAL32         R32;
                REAL64         R64;
-               unsigned int         domain;
+               DOMAIN         domain;
                }              OD_testVar_t;
 /*2130    */ typedef struct {
                UNSIGNED8      maxSubIndex;
@@ -200,7 +199,7 @@
                INTEGER32      value;
                INTEGER32      min;
                INTEGER32      max;
-               unsigned int         plot;
+               DOMAIN         plot;
                UNSIGNED32     triggerTime;
                }              OD_trace_t;
 
